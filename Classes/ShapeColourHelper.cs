@@ -1,4 +1,5 @@
 ﻿
+using System.Drawing;
 using Week1ObjectOriented.Interfaces;
 
 namespace Week1ObjectOriented.Classes
@@ -19,6 +20,22 @@ namespace Week1ObjectOriented.Classes
 
             return s;
         }
+
+        private static readonly Color[] colors = new Color[] {
+            Color.Yellow,
+            Color.Red,
+            Color.Green,
+            Color.Blue,
+            Color.Orange,
+        }
+       
+        //random instance is used to generate a random index
+
+        private static readonly Random random = new Random();
+
+        public static Color GetRandomColor(Shape s) {
+            int randomIndex = random.Next(colors.Length);
+            return s.colors[randomIndex];
 
     }
 }

@@ -20,12 +20,26 @@ catch(Exception ex)
 
 
 
-var circle = new Circle();
+var circle = new Circle(4);
 
-ShapeColourHelper.AddColour(circle);
+ShapeColourHelper.GetRandomColor(circle);
+
+Console.WriteLine("Random color of circle "+ ShapeColourHelper.GetRandomColor(circle));
 
 
+// Generate an array of shapes
+IShape[] shapes = new IShape[]
+{
+            new Circle(5),
+            new Triangle(4, 3),
+            new Circle(2),
+};
 
+// Print area and color of each shape
+foreach (IShape shape in shapes)
+{
+    Console.WriteLine($"{shape.GetType().Name} - Area: {shape.GetArea()}, Color: {shape.Color.Name}");
+}
 
 
 ShapeColourHelper.AddColour(square);
